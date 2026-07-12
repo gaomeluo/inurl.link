@@ -1,3 +1,27 @@
+替换了原来的首页，如需更改首页UI参考下面的步骤
+
+###第一步：上传 landing.vue（新建文件）
+1.打开 https://github.com/gaomeluo/inurl.link/tree/master/app/layouts
+2.点 「Add file」→「Create new file」
+3.文件名填：landing.vue
+4.内容：打开 app_layouts_landing.vue 全选复制，粘贴进去
+5.Commit message 写 添加 landing layout
+6.点 Commit
+###第二步：替换 index.vue（覆盖已有文件）
+1.打开 https://github.com/gaomeluo/inurl.link/tree/master/app/pages
+2.点进现有的 index.vue
+3.点右上角 ✏️ 编辑按钮（铅笔图标）
+4.全删掉，然后把 app_pages_index.vue 的内容全选粘贴进去
+5.Commit message 写 替换首页为 inurl.link 导航页
+6.点 Commit changes
+###第三步：重建 _routes.json
+之前那个静态 HTML 方案失败就是因为 Nuxt 构建会覆盖 _routes.json。这次走 Nuxt 方案，确保项目根目录的 _routes.json 不存在或被删除，让 Nuxt 自己生成。
+
+完成后 Cloudflare Pages 自动触发部署。
+
+
+
+
 # ⚡ Sink
 
 **A Simple / Speedy / Secure Link Shortener with Analytics, 100% run on Cloudflare.**
