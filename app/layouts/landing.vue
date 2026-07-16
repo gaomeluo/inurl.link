@@ -1,14 +1,24 @@
+<script setup lang="ts">
+// 仅在首页激活时设置 body 背景色；离开首页时 Nuxt 自动清理
+useHead({
+  bodyAttrs: { style: 'background: #030014;' },
+  link: [
+    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap' },
+  ],
+})
+</script>
+
 <template>
   <div class="home-page">
     <slot />
   </div>
 </template>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
+<style scoped>
+/* 变量定义在 .home-page 上，自动向下级组件（index.vue）继承 */
 .home-page {
-  /* ===== CSS Variables (scoped to landing page only) ===== */
   --bg-primary: #030014;
   --bg-card: rgba(255,255,255,0.04);
   --text-primary: #FFFFFF;
@@ -29,19 +39,10 @@
   --font-cjk: 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
   --font-en: 'Inter', system-ui, sans-serif;
 
-  /* ===== Body-equivalent styles ===== */
-  background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-en);
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
-}
-
-/* ===== Scoped reset (only within landing page) ===== */
-.home-page * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 </style>
