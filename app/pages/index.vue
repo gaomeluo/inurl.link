@@ -323,35 +323,7 @@ const toggleMenu = () => { mobileMenuOpen.value = !mobileMenuOpen.value }
   </footer>
 </template>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-/* ===== CSS Variables ===== */
-:root {
-  --bg-primary: #030014;
-  --bg-card: rgba(255,255,255,0.04);
-  --text-primary: #FFFFFF;
-  --text-secondary: rgba(255,255,255,0.65);
-  --text-tertiary: rgba(255,255,255,0.45);
-  --border-subtle: rgba(255,255,255,0.10);
-  --border-strong: rgba(255,255,255,0.18);
-  --accent-cyan: #2EA7FF;
-  --accent-purple: #9381FF;
-  --accent-green: #13DDC4;
-  --accent-amber: #FFB454;
-  --accent-red: #FF4D6D;
-  --radius-card: 20px;
-  --radius-btn: 99px;
-  --shadow-glow-cyan: 0 0 30px rgba(46,167,255,0.2);
-  --shadow-glow-purple: 0 0 30px rgba(147,129,255,0.2);
-  --shadow-glow-green: 0 0 30px rgba(19,221,196,0.2);
-  --font-cjk: 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
-  --font-en: 'Inter', system-ui, sans-serif;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; min-height: 100vh; overflow-x: hidden; font-family: var(--font-en); }
-
+<style scoped>
 /* ===== Header ===== */
 .site-header { position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border-subtle); }
 .header-inner {
@@ -555,7 +527,7 @@ body { background: var(--bg-primary); color: var(--text-primary); line-height: 1
 .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-green); }
 .status-text { font-size: 12px; color: var(--text-secondary); font-family: var(--font-en); }
 
-/* ===== Responsive ===== */
+/* ===== Responsive (these class selectors work fine with scoped) ===== */
 @media (max-width: 1023px) {
   .nav-links, .header-inner > .btn-primary { display: none; }
   .hamburger { display: flex; }
