@@ -22,6 +22,7 @@ const toggleMenu = () => { mobileMenuOpen.value = !mobileMenuOpen.value }
       </a>
       <nav class="nav-links">
         <a href="/" class="active">首页</a>
+        <a href="https://api.inurl.link/" target="_blank">API Token大全</a>
         <a href="https://tools.inurl.link/" target="_blank">工具箱</a>
         <a href="https://ping.gaomeluo.com/" target="_blank">云测速</a>
         <a href="https://blog.gaomeluo.com/" target="_blank">博客</a>
@@ -34,6 +35,7 @@ const toggleMenu = () => { mobileMenuOpen.value = !mobileMenuOpen.value }
     </div>
     <nav class="mobile-menu" :class="{ active: mobileMenuOpen }">
       <a href="/" :class="{ active: true }" @click="toggleMenu">首页</a>
+      <a href="https://api.inurl.link/" target="_blank" @click="toggleMenu">API Token大全</a>
       <a href="https://tools.inurl.link/" target="_blank" @click="toggleMenu">工具箱</a>
       <a href="https://ping.gaomeluo.com/" target="_blank" @click="toggleMenu">云测速</a>
       <a href="https://blog.gaomeluo.com/" target="_blank" @click="toggleMenu">博客</a>
@@ -75,10 +77,10 @@ const toggleMenu = () => { mobileMenuOpen.value = !mobileMenuOpen.value }
         <p>常用开发 & 日常工具集合，即开即用，无需安装</p>
         <span class="svc-link svc-link-purple">立即使用 →</span>
       </a>
-      <a href="https://bt.inurl.link/" class="svc-card" target="_blank">
+      <a href="https://api.inurl.link/" class="svc-card" target="_blank">
         <svg class="svc-icon" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="12" fill="#13DDC4" fill-opacity="0.15"/><circle cx="19" cy="19" r="7" stroke="#13DDC4" stroke-width="2"/><path d="M24 24L30 30" stroke="#13DDC4" stroke-width="2" stroke-linecap="round"/><path d="M14 19H24" stroke="#13DDC4" stroke-width="2" stroke-linecap="round"/></svg>
-        <h3>BT 种子搜索</h3>
-        <p>快速搜索全网 BT 种子资源，精准找到所需内容</p>
+        <h3>API Token大全</h3>
+        <p>国内外免费 / 付费 API 一站式收录 · 性价比对比 · 擅长领域导航</p>
         <span class="svc-link svc-link-green">立即使用 →</span>
       </a>
       <a href="https://blog.gaomeluo.com/" class="svc-card" target="_blank">
@@ -295,7 +297,7 @@ const toggleMenu = () => { mobileMenuOpen.value = !mobileMenuOpen.value }
         <h4>服务</h4>
         <a href="https://ping.gaomeluo.com/" target="_blank">云服务测速</a>
         <a href="https://tools.inurl.link/" target="_blank">在线工具箱</a>
-        <a href="https://bt.inurl.link/" target="_blank">BT 种子搜索</a>
+        <a href="https://api.inurl.link/" target="_blank">API Token 大全</a>
         <a href="https://blog.gaomeluo.com/" target="_blank">技术博客</a>
       </div>
       <div class="footer-col">
