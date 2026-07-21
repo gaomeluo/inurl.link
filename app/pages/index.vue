@@ -115,7 +115,7 @@ onMounted(() => {
     </section>
 
     <!-- CORE SERVICES -->
-    <section class="wrap" id="services" style="padding:56px 24px">
+    <section class="wrap" id="services" style="padding:8px 24px 48px">
       <div class="section-head reveal">
         <span class="eyebrow"><span class="dot"></span>CORE SERVICES</span>
         <h2>一站式精选服务</h2>
@@ -154,7 +154,7 @@ onMounted(() => {
     </section>
 
     <!-- BLOG -->
-    <section class="wrap" id="blog" style="padding:10px 24px 56px">
+    <section class="wrap" id="blog" style="padding:8px 24px 48px">
       <div class="section-head reveal">
         <span class="eyebrow"><span class="dot"></span>LATEST</span>
         <h2>技术博客 · 最新文章</h2>
@@ -245,7 +245,7 @@ onMounted(() => {
     </section>
 
     <!-- LIVE STATS -->
-    <section class="wrap" id="stats" style="padding:10px 24px 56px">
+    <section class="wrap" id="stats" style="padding:8px 24px 48px">
       <div class="band reveal">
         <div class="section-head" style="margin-bottom:30px">
           <span class="eyebrow"><span class="dot"></span>LIVE STATS</span>
@@ -418,7 +418,7 @@ onMounted(() => {
   .inurl-landing .nav-toggle{display:none;background:none;border:0;color:var(--text);cursor:pointer}
 
   /* ---------- Hero ---------- */
-  .inurl-landing .hero{padding:160px 0 56px;text-align:center;position:relative}
+  .inurl-landing .hero{padding:160px 0 48px;text-align:center;position:relative}
   .inurl-landing .hero .badge-row{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:26px}
   .inurl-landing .chip{
     display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--text-dim);
@@ -531,7 +531,7 @@ onMounted(() => {
   .inurl-landing .post .meta{display:flex;justify-content:space-between;font-size:12.5px;color:var(--text-faint);margin-top:4px}
 
   /* ---------- CTA ---------- */
-  .inurl-landing .cta-sec{padding:64px 0}
+  .inurl-landing .cta-sec{padding:8px 0 48px}
   .inurl-landing .cta-box{
     text-align:center;padding:64px 32px;border-radius:30px;position:relative;overflow:hidden;
     background:linear-gradient(135deg,rgba(124,92,255,.18),rgba(34,211,238,.10));
@@ -541,7 +541,7 @@ onMounted(() => {
   .inurl-landing .cta-box p{color:var(--text-dim);font-size:17px;max-width:520px;margin:0 auto 30px}
 
   /* ---------- Footer ---------- */
-  .inurl-landing footer{border-top:1px solid var(--border);margin-top:40px;padding:54px 0 36px;background:rgba(8,9,20,.5)}
+  .inurl-landing footer{border-top:1px solid var(--border);margin-top:8px;padding:44px 0 32px;background:rgba(8,9,20,.5)}
   .inurl-landing .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:30px}
   .inurl-landing .foot-grid h5{font-size:14px;color:var(--text);margin-bottom:16px;font-weight:700}
   .inurl-landing .foot-grid a{display:block;color:var(--text-dim);font-size:14px;padding:6px 0;transition:color .2s}
