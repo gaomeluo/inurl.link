@@ -82,7 +82,7 @@ onMounted(() => {
         <nav class="nav-links">
           <a href="https://api.inurl.link/">API Token大全</a>
           <a href="https://tools.inurl.link/">工具箱</a>
-          <a href="https://ping.gaomeluo.com/">云测速</a>
+          <a href="https://ping.inurl.link/">云测速</a>
           <a href="https://blog.gaomeluo.com/">博客</a>
           <a href="https://www.lixiaoxin.com/">关于</a>
         </nav>
@@ -122,7 +122,7 @@ onMounted(() => {
         <p>云端测速、在线工具、资源搜索，核心功能应有尽有。</p>
       </div>
       <div class="grid cols-4">
-        <a class="card reveal d1" href="https://ping.gaomeluo.com/">
+        <a class="card reveal d1" href="https://ping.inurl.link/">
           <span class="glow"></span>
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
           <h3>云服务节点测速</h3>
@@ -282,7 +282,7 @@ onMounted(() => {
             <a href="#top" class="brand"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%231677ff'/%3E%3Cstop offset='100%25' stop-color='%232979ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='url(%23g)' stroke-width='2.5'/%3E%3Cpolygon points='13,8 6,17 13,26 8,17' fill='url(%23g)'/%3E%3Cpolygon points='19,8 26,17 19,26 24,17' fill='url(%23g)'/%3E%3C/svg%3E" alt="inurl.link" class="logo-img" /><span>inurl<b>.link</b></span></a>
             <p>发现 · 连接 · 探索。一站式精选服务平台，连接你与高效工具。</p>
           </div>
-          <div><h5>核心服务</h5><a href="https://ping.gaomeluo.com/">节点测速</a><a href="https://tools.inurl.link/">在线工具箱</a><a href="https://api.inurl.link/">API 导航</a><a href="https://blog.gaomeluo.com/">技术博客</a></div>
+          <div><h5>核心服务</h5><a href="https://ping.inurl.link/">节点测速</a><a href="https://tools.inurl.link/">在线工具箱</a><a href="https://api.inurl.link/">API 导航</a><a href="https://blog.gaomeluo.com/">技术博客</a></div>
           <div><h5>精选资源</h5><a href="https://tools.inurl.link/">JSON 格式化</a><a href="https://tools.inurl.link/">Base64 编解码</a><a href="https://tools.inurl.link/">UUID 生成</a><a href="https://tools.inurl.link/">时间戳转换</a></div>
           <div><h5>关于</h5><a href="#top">网站首页</a><a href="#stats">实时数据</a><a href="#blog">最新文章</a><a href="https://blog.gaomeluo.com/">联系我们</a></div>
         </div>
