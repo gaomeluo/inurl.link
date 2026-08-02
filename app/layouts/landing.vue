@@ -13,11 +13,12 @@ useHead({
     {
       key: 'landing-global',
       children: `
-html { background:#03030c; scroll-behavior:smooth; overflow-x:hidden; }
-body { background:#03030c; overflow-x:hidden; }
+html { background:#03030c; scroll-behavior:smooth; overflow-x:clip; }
+body { background:#03030c; overflow-x:clip; }
 ::selection { background:rgba(77,168,255,0.32); color:#fff; }
 * { scrollbar-width:thin; scrollbar-color:rgba(77,168,255,0.35) transparent; }
-::-webkit-scrollbar { width:10px; height:10px; }
+::-webkit-scrollbar { width:10px; }
+::-webkit-scrollbar:horizontal { width:0; height:0; }
 ::-webkit-scrollbar-track { background:rgba(255,255,255,0.02); }
 ::-webkit-scrollbar-thumb {
   background:linear-gradient(180deg,rgba(77,168,255,0.5),rgba(139,108,255,0.5));
@@ -400,7 +401,7 @@ onMounted(() => {
 /* ── Nebula clouds ───────────────────────────────── */
 .nebula-layer {
   position: fixed;
-  inset: -10%;
+  inset: 0;
   z-index: 0;
   pointer-events: none;
   background:

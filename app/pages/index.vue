@@ -14,6 +14,11 @@ useHead({
     { property: 'og:description', content: '发现、连接、探索 — 聚合精选工具与服务，打造高效互联网导航体验。' },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: 'https://inurl.link' },
+    { property: 'og:image', content: 'https://inurl.link/banner.png' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+  ],
+  link: [
+    { rel: 'canonical', href: 'https://inurl.link' },
   ],
   script: [
     {
@@ -563,7 +568,10 @@ onMounted(() => {
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2024–2026 inurl.link · 互联网精选导航</span>
+      <div class="copyright">
+        <span class="copy-main">© 2024–2026 inurl.link · 互联网精选导航</span>
+        <span class="copy-sub">探索 · 连接 · 发现 — 你的互联网精选入口</span>
+      </div>
       <div class="footer-status">
         <span class="status-dot" />
         <span class="status-text">SYSTEM ONLINE</span>
@@ -1970,17 +1978,17 @@ onMounted(() => {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: clamp(32px, 4vw, 48px) clamp(16px, 5vw, 80px) clamp(16px, 2vw, 24px);
+  padding: clamp(28px, 3.5vw, 40px) clamp(16px, 5vw, 80px) clamp(10px, 1.5vw, 16px);
   background: rgba(2, 2, 8, 0.86);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(24px, 3vw, 36px);
-  border-top: 1px solid var(--border-subtle);
+  gap: clamp(18px, 2.5vw, 28px);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
 .site-footer::before {
+  display: none;
   content: '';
   position: absolute;
   top: 0;
@@ -2039,15 +2047,25 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 16px;
   flex-wrap: wrap;
   gap: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
-.footer-bottom span {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.4);
+.copyright {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.copy-main {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.6);
   font-family: var(--font-cjk);
+}
+.copy-sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.32);
+  font-family: var(--font-cjk);
+  letter-spacing: 0.3px;
 }
 .footer-status {
   display: flex;
