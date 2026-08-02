@@ -933,6 +933,7 @@ onMounted(() => {
   pointer-events: none;
   perspective: 900px;
   transform-style: preserve-3d;
+  overflow: hidden;
 }
 
 /* Horizon grid floor */
@@ -940,7 +941,8 @@ onMounted(() => {
   position: absolute;
   left: 50%;
   bottom: -6%;
-  width: 300%;
+  width: 100%;
+  max-width: 1440px;
   height: 66%;
   transform: translateX(-50%) perspective(340px) rotateX(75deg);
   transform-origin: 50% 100%;
@@ -954,13 +956,7 @@ onMounted(() => {
   opacity: 0.75;
 }
 .horizon-line {
-  position: absolute;
-  left: 8%;
-  right: 8%;
-  bottom: 33%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(77, 168, 255, 0.65), rgba(139, 108, 255, 0.5), transparent);
-  box-shadow: 0 0 26px rgba(77, 168, 255, 0.5);
+  display: none;
 }
 
 /* Energy core */
@@ -1001,8 +997,8 @@ onMounted(() => {
   animation: orbit-2-spin 17s linear infinite;
 }
 .orbit-3 {
-  width: clamp(380px, 56vw, 800px);
-  height: clamp(380px, 56vw, 800px);
+  width: clamp(280px, 42vw, 560px);
+  height: clamp(280px, 42vw, 560px);
   border-color: rgba(0, 229, 184, 0.14);
   animation: orbit-3-spin 30s linear infinite;
 }
@@ -1991,12 +1987,12 @@ onMounted(() => {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: clamp(28px, 3.5vw, 40px) clamp(16px, 5vw, 80px) clamp(10px, 1.5vw, 16px);
+  padding: clamp(20px, 3vw, 32px) clamp(16px, 5vw, 80px) 0;
   background: rgba(2, 2, 8, 0.86);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(18px, 2.5vw, 28px);
+  gap: clamp(14px, 2vw, 22px);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
