@@ -85,8 +85,8 @@ onMounted(() => {
   let nextMeteorAt = 1800
 
   function seed() {
-    const target = Math.round((width * height) / 6200)
-    const count = Math.max(120, Math.min(420, target))
+    const target = Math.round((width * height) / 9000)
+    const count = Math.max(90, Math.min(260, target))
     stars = Array.from({ length: count }, () => {
       const depth = Math.random()
       return {
@@ -101,7 +101,7 @@ onMounted(() => {
       }
     })
 
-    const nodeCount = width < 760 ? 14 : width < 1280 ? 24 : 34
+    const nodeCount = width < 760 ? 10 : width < 1280 ? 16 : 22
     const band = Math.min(height, 880)
     nodes = Array.from({ length: nodeCount }, () => ({
       x: Math.random() * width,
@@ -263,10 +263,15 @@ onMounted(() => {
     }
   }
 
+  let lastFrame = 0
+  const FPS = 30
   function render(time: number) {
     frameId = requestAnimationFrame(render)
     if (paused)
       return
+    if (time - lastFrame < 1000 / FPS)
+      return
+    lastFrame = time
 
     const t = time * 0.001
     parallax.x += (parallax.tx - parallax.x) * 0.045
@@ -319,7 +324,14 @@ onMounted(() => {
     paintNetwork()
   }
   else {
-    frameId = requestAnimationFrame(render)
+    const startCanvas = () => {
+      lastFrame = performance.now()
+      frameId = requestAnimationFrame(render)
+    }
+    if ('requestIdleCallback' in window)
+      (window as any).requestIdleCallback(startCanvas, { timeout: 600 })
+    else
+      setTimeout(startCanvas, 250)
   }
 
   window.addEventListener('pointermove', onPointerMove, { passive: true })

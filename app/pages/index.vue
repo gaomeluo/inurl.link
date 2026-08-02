@@ -140,10 +140,19 @@ onMounted(() => {
     pos.tx = pos.x
     pos.ty = pos.y
     let auraFrame = 0
+    let auraIdle: ReturnType<typeof setTimeout> | null = null
     const auraMove = (e: PointerEvent) => {
       pos.tx = e.clientX
       pos.ty = e.clientY
       aura.style.opacity = '1'
+      if (!auraFrame)
+        auraFrame = requestAnimationFrame(auraLoop)
+      if (auraIdle)
+        clearTimeout(auraIdle)
+      auraIdle = setTimeout(() => {
+        cancelAnimationFrame(auraFrame)
+        auraFrame = 0
+      }, 1500)
     }
     const auraOut = () => {
       aura.style.opacity = '0'
@@ -159,6 +168,8 @@ onMounted(() => {
     window.addEventListener('pointerleave', auraOut, { passive: true })
     disposers.push(() => {
       cancelAnimationFrame(auraFrame)
+      if (auraIdle)
+        clearTimeout(auraIdle)
       window.removeEventListener('pointermove', auraMove)
       window.removeEventListener('pointerleave', auraOut)
       aura.remove()
@@ -724,8 +735,8 @@ onMounted(() => {
   justify-content: space-between;
   padding: 0 clamp(16px, 4vw, 80px);
   background: rgba(4, 4, 12, 0.72);
-  backdrop-filter: blur(26px) saturate(180%);
-  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
   transition: background 0.3s ease;
 }
 .site-header.condensed .header-inner {
@@ -871,8 +882,8 @@ onMounted(() => {
   right: 0;
   bottom: 0;
   background: rgba(4, 4, 12, 0.97);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   flex-direction: column;
   padding: 32px clamp(20px, 5vw, 40px);
   gap: 8px;
@@ -963,7 +974,7 @@ onMounted(() => {
   border-radius: 50%;
   background:
     radial-gradient(circle, rgba(150, 205, 255, 0.2) 0%, rgba(139, 108, 255, 0.1) 42%, transparent 68%);
-  filter: blur(6px);
+  filter: blur(4px);
   animation: core-breathe 6s ease-in-out infinite;
 }
 
@@ -1200,6 +1211,8 @@ onMounted(() => {
   align-items: center;
   padding: clamp(44px, 6vw, 84px) clamp(16px, 5vw, 80px);
   gap: clamp(32px, 4vw, 48px);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
 }
 .section-header {
   display: flex;
