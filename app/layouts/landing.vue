@@ -2,6 +2,9 @@
 useHead({
   bodyAttrs: { style: 'background:#03030c;' },
   link: [
+    { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+    { rel: 'alternate icon', href: '/favicon.ico' },
+    { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
     { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700;900&display=swap' },
@@ -10,8 +13,8 @@ useHead({
     {
       key: 'landing-global',
       children: `
-html { background:#03030c; scroll-behavior:smooth; }
-body { background:#03030c; }
+html { background:#03030c; scroll-behavior:smooth; overflow-x:hidden; }
+body { background:#03030c; overflow-x:hidden; }
 ::selection { background:rgba(77,168,255,0.32); color:#fff; }
 * { scrollbar-width:thin; scrollbar-color:rgba(77,168,255,0.35) transparent; }
 ::-webkit-scrollbar { width:10px; height:10px; }

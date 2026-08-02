@@ -6,6 +6,15 @@ definePageMeta({
 // Progressive-enhancement flag: reveal animations only apply when JS is alive,
 // so no-JS / crawler visitors always get fully visible content.
 useHead({
+  title: 'inurl.link · 互联网精选导航 — 发现 · 连接 · 探索',
+  meta: [
+    { name: 'keywords', content: 'inurl,互联网导航,在线工具,云测速,短链接,API Token,AI工具,开发者资源,效率工具,网址导航' },
+    { name: 'description', content: 'inurl.link 是你的互联网入口，聚合云服务节点测速、在线工具箱、AI 资源导航、技术博客与短链接服务，打造高效的一站式互联网导航体验。' },
+    { property: 'og:title', content: 'inurl.link · 互联网精选导航' },
+    { property: 'og:description', content: '发现、连接、探索 — 聚合精选工具与服务，打造高效互联网导航体验。' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: 'https://inurl.link' },
+  ],
   script: [
     {
       key: 'landing-enhance',
@@ -164,11 +173,14 @@ onMounted(() => {
     <div class="header-inner">
       <a href="/" class="logo">
         <span class="logo-mark">
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-            <defs><linearGradient id="lgGradH" x1="0" y1="0" x2="30" y2="30"><stop stop-color="#2EA7FF" /><stop offset="1" stop-color="#9381FF" /></linearGradient></defs>
-            <circle cx="15" cy="15" r="14" stroke="url(#lgGradH)" stroke-width="2" />
-            <path d="M9 12C9 9.79086 10.7909 8 13 8H17C19.2091 8 21 9.79086 21 12V18C21 20.2091 19.2091 22 17 22H13C10.7909 22 9 20.2091 9 18V12Z" stroke="url(#lgGradH)" stroke-width="2" />
-            <path d="M13 8V22" stroke="url(#lgGradH)" stroke-width="1.5" />
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#2EA7FF" /><stop offset="1" stop-color="#6366F1" /></linearGradient></defs>
+            <circle cx="16" cy="16" r="14" stroke="url(#logoGrad)" stroke-width="2" />
+            <circle cx="10" cy="16" r="3" fill="url(#logoGrad)" />
+            <circle cx="22" cy="16" r="3" fill="url(#logoGrad)" />
+            <path d="M13 16H19" stroke="url(#logoGrad)" stroke-width="2" stroke-linecap="round" />
+            <path d="M12.5 12.5L9 16L12.5 19.5" stroke="url(#logoGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+            <path d="M19.5 12.5L23 16L19.5 19.5" stroke="url(#logoGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
           </svg>
           <i class="logo-halo" aria-hidden="true" />
         </span>
@@ -177,7 +189,7 @@ onMounted(() => {
       <nav class="nav-links">
         <a href="/" class="active">首页</a>
         <a href="https://tools.inurl.link/" target="_blank">工具箱</a>
-        <a href="https://ping.gaomeluo.com/" target="_blank">云测速</a>
+        <a href="https://ping.inurl.link/" target="_blank">云测速</a>
         <a href="https://blog.gaomeluo.com/" target="_blank">博客</a>
         <a href="https://www.lixiaoxin.com" target="_blank">关于</a>
       </nav>
@@ -189,7 +201,7 @@ onMounted(() => {
     <nav class="mobile-menu" :class="{ active: mobileMenuOpen }">
       <a href="/" :class="{ active: true }" @click="toggleMenu">首页</a>
       <a href="https://tools.inurl.link/" target="_blank" @click="toggleMenu">工具箱</a>
-      <a href="https://ping.gaomeluo.com/" target="_blank" @click="toggleMenu">云测速</a>
+      <a href="https://ping.inurl.link/" target="_blank" @click="toggleMenu">云测速</a>
       <a href="https://blog.gaomeluo.com/" target="_blank" @click="toggleMenu">博客</a>
       <a href="https://www.lixiaoxin.com" target="_blank" @click="toggleMenu">关于</a>
       <a href="https://inurl.link/dashboard" class="btn-primary" target="_blank" @click="toggleMenu">短连接</a>
@@ -230,9 +242,6 @@ onMounted(() => {
       <span class="glitch" data-text="发现 · 连接 · 探索">发现 · 连接 · 探索</span>
     </h1>
     <p class="hero-desc" data-reveal style="--d:180ms">聚合精选工具与服务，打造高效互联网导航体验</p>
-    <div class="hero-rule" data-reveal style="--d:260ms" aria-hidden="true">
-      <i /><span /><i />
-    </div>
   </section>
 
   <!-- ═══════════ CORE SERVICES ═══════════ -->
@@ -253,9 +262,9 @@ onMounted(() => {
         <h3>云服务节点测速</h3>
         <p>实时检测阿里云、腾讯云等主流厂商各节点延迟与速度，助你选择最优线路</p>
         <div class="svc-bottom-links">
-          <a href="https://ping.gaomeluo.com/aliyun/" class="svc-sub-link" target="_blank">阿里云</a>
-          <a href="https://ping.gaomeluo.com/tengxun/" class="svc-sub-link" target="_blank">腾讯云</a>
-          <a href="https://ping.gaomeluo.com/" class="svc-link svc-link-cyan" target="_blank">立即使用 →</a>
+          <a href="https://ping.inurl.link/aliyun/" class="svc-sub-link" target="_blank">阿里云</a>
+          <a href="https://ping.inurl.link/tengxun/" class="svc-sub-link" target="_blank">腾讯云</a>
+          <a href="https://ping.inurl.link/" class="svc-link svc-link-cyan" target="_blank">立即使用 →</a>
         </div>
       </div>
       <a href="https://tools.inurl.link/" class="svc-card svc-card-purple" target="_blank" data-tilt data-reveal style="--d:80ms">
@@ -269,16 +278,16 @@ onMounted(() => {
         <p>常用开发 & 日常工具集合，即开即用，无需安装</p>
         <span class="svc-link svc-link-purple">立即使用 →</span>
       </a>
-      <a href="https://bt.inurl.link/" class="svc-card svc-card-green" target="_blank" data-tilt data-reveal style="--d:160ms">
+      <a href="https://inurl.top/" class="svc-card svc-card-green" target="_blank" data-tilt data-reveal style="--d:160ms">
         <i class="card-spot" aria-hidden="true" />
         <i class="c-corner tl" aria-hidden="true" /><i class="c-corner br" aria-hidden="true" />
         <div class="svc-icon-area svc-icon-area-green">
           <i class="icon-ring" aria-hidden="true" />
-          <svg class="svc-icon" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="12" fill="#13DDC4" fill-opacity="0.15" /><circle cx="19" cy="19" r="7" stroke="#13DDC4" stroke-width="2" /><path d="M24 24L30 30" stroke="#13DDC4" stroke-width="2" stroke-linecap="round" /><path d="M14 19H24" stroke="#13DDC4" stroke-width="2" stroke-linecap="round" /></svg>
+          <svg class="svc-icon" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="12" fill="#13DDC4" fill-opacity="0.15" /><path d="M14 22H30M22 14V30" stroke="#13DDC4" stroke-width="2.5" stroke-linecap="round" /><circle cx="22" cy="22" r="10" stroke="#13DDC4" stroke-width="1.5" opacity="0.6" /><path d="M31 13L35 9M35 13L31 9" stroke="#13DDC4" stroke-width="1.5" stroke-linecap="round" /><path d="M9 31L13 27M13 31L9 27" stroke="#13DDC4" stroke-width="1.5" stroke-linecap="round" /></svg>
         </div>
-        <h3>BT 种子搜索</h3>
-        <p>快速搜索全网 BT 种子资源，精准找到所需内容</p>
-        <span class="svc-link svc-link-green">立即使用 →</span>
+        <h3>资源导航</h3>
+        <p>聚合 AI 工具、API Token、开发资源与效率神器，一站式探索互联网优质服务</p>
+        <span class="svc-link svc-link-green">立即探索 →</span>
       </a>
       <a href="https://blog.gaomeluo.com/" class="svc-card svc-card-white" target="_blank" data-tilt data-reveal style="--d:240ms">
         <i class="card-spot" aria-hidden="true" />
@@ -518,11 +527,14 @@ onMounted(() => {
       <div class="footer-brand">
         <div class="logo" style="margin-bottom:4px">
           <span class="logo-mark">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <defs><linearGradient id="lgGradF" x1="0" y1="0" x2="30" y2="30"><stop stop-color="#2EA7FF" /><stop offset="1" stop-color="#9381FF" /></linearGradient></defs>
-              <circle cx="15" cy="15" r="14" stroke="url(#lgGradF)" stroke-width="2" />
-              <path d="M9 12C9 9.79086 10.7909 8 13 8H17C19.2091 8 21 9.79086 21 12V18C21 20.2091 19.2091 22 17 22H13C10.7909 22 9 20.2091 9 18V12Z" stroke="url(#lgGradF)" stroke-width="2" />
-              <path d="M13 8V22" stroke="url(#lgGradF)" stroke-width="1.5" />
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+              <defs><linearGradient id="lgGradF" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#2EA7FF" /><stop offset="1" stop-color="#6366F1" /></linearGradient></defs>
+              <circle cx="16" cy="16" r="14" stroke="url(#lgGradF)" stroke-width="2" />
+              <circle cx="10" cy="16" r="3" fill="url(#lgGradF)" />
+              <circle cx="22" cy="16" r="3" fill="url(#lgGradF)" />
+              <path d="M13 16H19" stroke="url(#lgGradF)" stroke-width="2" stroke-linecap="round" />
+              <path d="M12.5 12.5L9 16L12.5 19.5" stroke="url(#lgGradF)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+              <path d="M19.5 12.5L23 16L19.5 19.5" stroke="url(#lgGradF)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
             </svg>
           </span>
           <span class="logo-text">inurl.link</span>
@@ -531,9 +543,8 @@ onMounted(() => {
       </div>
       <div class="footer-col">
         <h4>服务</h4>
-        <a href="https://ping.gaomeluo.com/" target="_blank">云服务测速</a>
+        <a href="https://ping.inurl.link/" target="_blank">云服务测速</a>
         <a href="https://tools.inurl.link/" target="_blank">在线工具箱</a>
-        <a href="https://bt.inurl.link/" target="_blank">BT 种子搜索</a>
         <a href="https://blog.gaomeluo.com/" target="_blank">技术博客</a>
       </div>
       <div class="footer-col">
@@ -552,10 +563,10 @@ onMounted(() => {
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 inurl.link · All systems operational</span>
+      <span>© 2024–2026 inurl.link · 互联网精选导航</span>
       <div class="footer-status">
         <span class="status-dot" />
-        <span class="status-text">All systems operational</span>
+        <span class="status-text">SYSTEM ONLINE</span>
       </div>
     </div>
   </footer>
@@ -1959,12 +1970,12 @@ onMounted(() => {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: clamp(40px, 5vw, 60px) clamp(16px, 5vw, 80px) clamp(24px, 3vw, 40px);
+  padding: clamp(32px, 4vw, 48px) clamp(16px, 5vw, 80px) clamp(16px, 2vw, 24px);
   background: rgba(2, 2, 8, 0.86);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(28px, 4vw, 48px);
+  gap: clamp(24px, 3vw, 36px);
   border-top: 1px solid var(--border-subtle);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
