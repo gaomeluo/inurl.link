@@ -10,6 +10,7 @@
     "/icon.png",
     "/icon-192.png",
     "/_nuxt/*",
-    "/_ipx/*"
+    "/_ipx/*",
+    "/fonts/*"
   ]
 }
