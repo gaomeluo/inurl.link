@@ -5,16 +5,16 @@ useHead({
     { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
     { rel: 'alternate icon', href: '/favicon.ico' },
     { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700;900&display=swap' },
+    { rel: 'preconnect', href: 'https://fonts.googleapis.cn' },
+    { rel: 'preconnect', href: 'https://fonts.gstatic.cn', crossorigin: '' },
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.cn/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@500;700;900&display=swap' },
   ],
   style: [
     {
       key: 'landing-global',
       children: `
-html { background:#03030c; scroll-behavior:smooth; overflow-x:clip; }
-body { background:#03030c; overflow-x:clip; }
+html { background:#03030c; scroll-behavior:smooth; overflow-x:hidden; }
+body { background:#03030c; overflow-x:hidden; }
 ::selection { background:rgba(77,168,255,0.32); color:#fff; }
 * { scrollbar-width:thin; scrollbar-color:rgba(77,168,255,0.35) transparent; }
 ::-webkit-scrollbar { width:10px; }
@@ -355,11 +355,13 @@ onMounted(() => {
 
 <template>
   <div class="home-page">
-    <canvas ref="deepField" class="deep-field" aria-hidden="true" />
-    <div class="nebula-layer" aria-hidden="true" />
-    <div class="grid-overlay" aria-hidden="true" />
-    <div class="noise-layer" aria-hidden="true" />
-    <div class="vignette" aria-hidden="true" />
+    <div class="bg-stage" aria-hidden="true">
+      <canvas ref="deepField" class="deep-field" />
+      <div class="nebula-layer" />
+      <div class="grid-overlay" />
+      <div class="noise-layer" />
+      <div class="vignette" />
+    </div>
     <div class="home-shell">
       <slot />
     </div>
@@ -400,9 +402,18 @@ onMounted(() => {
   background: var(--bg-deep);
 }
 
+/* ── Background stage (clips every decorative layer) ── */
+.bg-stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* ── Canvas deep field ───────────────────────────── */
 .deep-field {
-  position: fixed;
+  position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
@@ -412,7 +423,7 @@ onMounted(() => {
 
 /* ── Nebula clouds ───────────────────────────────── */
 .nebula-layer {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
@@ -443,7 +454,7 @@ onMounted(() => {
 
 /* ── Fine tech grid ──────────────────────────────── */
 .grid-overlay {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
@@ -458,7 +469,7 @@ onMounted(() => {
 
 /* ── Film grain ──────────────────────────────────── */
 .noise-layer {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
@@ -469,7 +480,7 @@ onMounted(() => {
 
 /* ── Vignette ────────────────────────────────────── */
 .vignette {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;

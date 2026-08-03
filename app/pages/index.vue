@@ -1207,8 +1207,6 @@ onMounted(() => {
   align-items: center;
   padding: clamp(44px, 6vw, 84px) clamp(16px, 5vw, 80px);
   gap: clamp(32px, 4vw, 48px);
-  content-visibility: auto;
-  contain-intrinsic-size: auto 720px;
 }
 .section-header {
   display: flex;
