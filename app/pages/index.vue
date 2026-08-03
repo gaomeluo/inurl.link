@@ -135,7 +135,8 @@ onMounted(() => {
     /* ── Cursor aura ─────────────────────────────── */
     const aura = document.createElement('div')
     aura.className = 'cursor-aura'
-    document.body.appendChild(aura)
+    const fxStage = document.querySelector('.fx-stage')
+    ;(fxStage || document.body).appendChild(aura)
     const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2, tx: 0, ty: 0 }
     pos.tx = pos.x
     pos.ty = pos.y
@@ -184,6 +185,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <div class="fx-stage" aria-hidden="true" />
   <!-- ═══════════ HEADER ═══════════ -->
   <header class="site-header" :class="{ condensed: scrolled }">
     <div class="header-inner">
@@ -700,6 +702,13 @@ onMounted(() => {
 /* ════════════════════════════════════════════
    CURSOR AURA (injected into body)
    ════════════════════════════════════════════ */
+.fx-stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
 :global(.cursor-aura) {
   position: fixed;
   top: 0;
