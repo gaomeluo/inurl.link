@@ -321,47 +321,6 @@ onMounted(() => {
     </div>
   </section>
 
-  <!-- ═══════════ MORE RESOURCES ═══════════ -->
-  <section class="section">
-    <div class="section-header" data-reveal>
-      <span class="section-tag purple"><i class="tag-line" />MORE RESOURCES<i class="tag-line" /></span>
-      <h2 class="section-title">更多精选资源</h2>
-      <p class="section-sub">按类别整理，涵盖开发、效率、娱乐、学习多场景工具</p>
-    </div>
-    <div class="feat-grid">
-      <a href="https://tools.inurl.link/" class="feat-item" target="_blank" data-reveal>
-        <div class="feat-icon" style="background:#2EA7FF" />
-        <div class="feat-text"><h4>JSON 格式化</h4><p>在线 JSON 解析、校验、压缩、转换</p></div>
-        <span class="feat-arrow">→</span>
-      </a>
-      <a href="https://tools.inurl.link/" class="feat-item" target="_blank" data-reveal style="--d:60ms">
-        <div class="feat-icon" style="background:#9381FF" />
-        <div class="feat-text"><h4>Base64 编解码</h4><p>文本、图片、文件的 Base64 转换</p></div>
-        <span class="feat-arrow">→</span>
-      </a>
-      <a href="https://tools.inurl.link/" class="feat-item" target="_blank" data-reveal style="--d:120ms">
-        <div class="feat-icon" style="background:#13DDC4" />
-        <div class="feat-text"><h4>UUID 生成器</h4><p>批量生成 UUID v1/v4/v5，校验有效性</p></div>
-        <span class="feat-arrow">→</span>
-      </a>
-      <a href="https://tools.inurl.link/" class="feat-item" target="_blank" data-reveal style="--d:180ms">
-        <div class="feat-icon" style="background:#FFB454" />
-        <div class="feat-text"><h4>时间戳转换</h4><p>Unix 时间戳与日期互转，支持多时区</p></div>
-        <span class="feat-arrow">→</span>
-      </a>
-      <a href="https://tools.inurl.link/" class="feat-item" target="_blank" data-reveal style="--d:240ms">
-        <div class="feat-icon" style="background:#FF4D6D" />
-        <div class="feat-text"><h4>正则表达式测试</h4><p>在线测试正则匹配，支持语法高亮</p></div>
-        <span class="feat-arrow">→</span>
-      </a>
-      <a href="https://tools.inurl.link/" class="feat-item" target="_blank" data-reveal style="--d:300ms">
-        <div class="feat-icon" style="background:linear-gradient(135deg,#2EA7FF,#13DDC4)" />
-        <div class="feat-text"><h4>二维码生成</h4><p>生成或解析二维码，支持自定义颜色 logo</p></div>
-        <span class="feat-arrow">→</span>
-      </a>
-    </div>
-  </section>
-
   <!-- ═══════════ LIVE STATS ═══════════ -->
   <section class="section">
     <div class="section-header" data-reveal>
@@ -1213,8 +1172,8 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: clamp(44px, 6vw, 84px) clamp(16px, 5vw, 80px);
-  gap: clamp(32px, 4vw, 48px);
+  padding: clamp(22px, 3vw, 42px) clamp(16px, 5vw, 80px);
+  gap: clamp(16px, 2vw, 24px);
 }
 .section-header {
   display: flex;
