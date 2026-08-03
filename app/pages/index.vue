@@ -710,7 +710,7 @@ onMounted(() => {
   z-index: 2;
 }
 :global(.cursor-aura) {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 460px;
@@ -731,8 +731,14 @@ onMounted(() => {
   position: sticky;
   top: 0;
   z-index: 100;
+  background: rgba(4, 4, 12, 0.72);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid var(--border-subtle);
-  transition: border-color 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.site-header.condensed {
+  background: rgba(4, 4, 12, 0.92);
 }
 .header-inner {
   position: relative;
@@ -743,13 +749,6 @@ onMounted(() => {
   align-items: center;
   justify-content: space-between;
   padding: 0 clamp(16px, 4vw, 80px);
-  background: rgba(4, 4, 12, 0.72);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  transition: background 0.3s ease;
-}
-.site-header.condensed .header-inner {
-  background: rgba(4, 4, 12, 0.92);
 }
 .header-inner::after {
   content: '';
