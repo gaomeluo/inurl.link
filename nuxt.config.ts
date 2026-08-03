@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
   ],
   devtools: { enabled: true },
-  css: ['@/assets/css/tailwind.css'],
+  css: ['@/assets/css/tailwind.css', '@/assets/fonts/fonts.css'],
   colorMode: {
     classSuffix: '',
   },

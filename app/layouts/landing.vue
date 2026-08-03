@@ -5,7 +5,6 @@ useHead({
     { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
     { rel: 'alternate icon', href: '/favicon.ico' },
     { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-    { rel: 'stylesheet', href: '/fonts/fonts.css' },
   ],
   style: [
     {
