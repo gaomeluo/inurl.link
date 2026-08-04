@@ -54,13 +54,16 @@ export default defineNuxtConfig({
     '/': {
       prerender: true,
     },
-    // Dashboard stays a pure client-side SPA (unchanged behaviour from the layer).
+    // Dashboard stays a pure client-side SPA, but it MUST be served dynamically by
+    // the Nitro server (the Sink app), NOT prerendered to static files. Prerendering
+    // here would bake a frozen shell and shadow the live Sink backend, breaking /dashboard.
+    // We explicitly override the layer's `prerender: true` with `prerender: false`.
     '/dashboard': {
       redirect: '/dashboard/links',
     },
     '/dashboard/**': {
       ssr: false,
-      prerender: true,
+      prerender: false,
     },
     '/api/**': {
       cors: process.env.NUXT_API_CORS === 'true',
