@@ -54,23 +54,8 @@ onMounted(() => {
   window.addEventListener('scroll', onScroll, { passive: true })
   disposers.push(() => window.removeEventListener('scroll', onScroll))
 
-  /* ── Scroll reveal (first screen only) ────────── */
-  const revealTargets = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'))
-  if ('IntersectionObserver' in window && !reduceMotion) {
-    const io = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting)
-          continue
-        entry.target.classList.add('is-visible')
-        io.unobserve(entry.target)
-      }
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' })
-    revealTargets.forEach(el => io.observe(el))
-    disposers.push(() => io.disconnect())
-  }
-  else {
-    revealTargets.forEach(el => el.classList.add('is-visible'))
-  }
+  /* The first screen now animates in via pure CSS (`data-hero`), so no observer
+     is needed here. Below-the-fold reveals are owned by <LandingBelow> itself. */
 
   /* ── Lazy-load below-the-fold on scroll ──────── */
   const triggerBelow = () => {
@@ -208,14 +193,17 @@ onMounted(() => {
       <span class="hud-ticks right" />
     </div>
 
-    <div class="badge" data-reveal>
+    <!-- First screen uses `data-hero` (pure CSS entrance) instead of `data-reveal`
+         (JS-driven IntersectionObserver). The homepage is prerendered to static HTML,
+         so the hero must paint without waiting for the JS bundle to download. -->
+    <div class="badge" data-hero>
       <span class="badge-dot" />
       <span class="badge-text">inurl.link · 你的互联网入口</span>
     </div>
-    <h1 class="hero-title" data-reveal style="--d:90ms">
+    <h1 class="hero-title" data-hero style="--d:90ms">
       <span class="glitch" data-text="发现 · 连接 · 探索">发现 · 连接 · 探索</span>
     </h1>
-    <p class="hero-desc" data-reveal style="--d:180ms">聚合精选工具与服务，打造高效互联网导航体验</p>
+    <p class="hero-desc" data-hero style="--d:180ms">聚合精选工具与服务，打造高效互联网导航体验</p>
   </section>
 
   <!-- ═══════════ BELOW-THE-FOLD (lazy) ═══════════ -->
@@ -298,6 +286,19 @@ onMounted(() => {
 :global(html.fx-on) [data-reveal].is-visible {
   opacity: 1;
   transform: none;
+}
+
+/* ── First-screen entrance: CSS-only, zero JS dependency ──────
+   Starts the moment the browser parses the markup, so the prerendered
+   hero is fully visible long before the JS bundle finishes loading. */
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: none; }
+}
+[data-hero] {
+  opacity: 0;
+  animation: hero-in 0.75s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0ms) both;
+  will-change: opacity, transform;
 }
 
 /* ════════════════════════════════════════════
@@ -850,6 +851,12 @@ onMounted(() => {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+  /* Never leave the hero stuck at opacity 0 when animations are disabled. */
+  [data-hero] {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }
 </style>

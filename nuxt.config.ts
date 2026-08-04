@@ -14,6 +14,12 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
   ],
   devtools: { enabled: true },
+  // The dashboard layer sets `ssr: false`, which used to turn the whole site —
+  // including the marketing homepage — into an empty SPA shell. That forced every
+  // visitor to download and execute the full JS bundle before seeing a single pixel.
+  // We re-enable SSR here and opt the dashboard out per-route below, so the homepage
+  // is prerendered to real HTML while the dashboard stays client-rendered.
+  ssr: true,
   css: ['@/assets/css/tailwind.css', '@/assets/fonts/fonts.css'],
   colorMode: {
     classSuffix: '',
@@ -43,7 +49,17 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
+    // Homepage: server-rendered at build time into static HTML, so the hero paints
+    // immediately instead of waiting on the JS bundle to hydrate an empty shell.
     '/': {
+      prerender: true,
+    },
+    // Dashboard stays a pure client-side SPA (unchanged behaviour from the layer).
+    '/dashboard': {
+      redirect: '/dashboard/links',
+    },
+    '/dashboard/**': {
+      ssr: false,
       prerender: true,
     },
     '/api/**': {
